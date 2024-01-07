@@ -5,11 +5,11 @@ interface BlobProps {
   showBlob: boolean;
 }
 
-export function Blob({ position, showBlob }: BlobProps) {
-  const isLeft = position === 'left';
+export function Blob(props: BlobProps) {
+  const isLeft = props.position === 'left';
 
   return (
-    <Show when={showBlob}>
+    <Show when={props.showBlob}>
       <>
         <svg
           class={`w-full h-full ${isLeft ? 'scale-x-[-1]' : ''}`}
@@ -25,8 +25,8 @@ export function Blob({ position, showBlob }: BlobProps) {
           <path fill='url(#gradient)' transform='translate(100 100)'>
             <animate
               attributeName='d'
-              // dur='25000ms'
-              dur='3000ms'
+              dur='20000ms'
+              //   dur='3000ms'
               repeatCount='indefinite'
               values='M32,-33.9C37.8,-26.2,36.4,-13.1,36.4,0C36.4,13.1,37.9,26.2,32.1,33.4C26.2,40.6,13.1,41.8,-0.6,42.4C-14.3,43,-28.5,42.9,-43.1,35.7C-57.7,28.5,-72.7,14.3,-70.7,2C-68.7,-10.3,-49.8,-20.6,-35.2,-28.3C-20.6,-36,-10.3,-41.1,1.4,-42.5C13.1,-43.8,26.2,-41.6,32,-33.9Z;
             
