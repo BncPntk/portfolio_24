@@ -41,7 +41,7 @@ export function Navbar() {
         >
           bencepentek.com
         </a>
-        <ul class='md:flex gap-8 text-[18px] font-semibold tracking-wider hidden'>
+        <ul class='md:flex gap-8 text-[18px] font-semibold tracking-wide hidden'>
           <For each={navItems}>
             {(item) => (
               <li class='py-4 px-2'>

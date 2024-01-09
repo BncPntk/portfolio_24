@@ -7,6 +7,8 @@ module.exports = {
         background: '#F5F8F7',
         fontMain: '#333333',
         fontSecondary: '#555555',
+        titleTwo: '#404040',
+        titleOne: '#40C3CA',
         actionMain: '#1d4ed8',
         actionSecondary: '#0384C7',
       },
