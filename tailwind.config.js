@@ -4,9 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#E2E8F0',
+        background: '#F5F8F7',
         fontMain: '#333333',
         fontSecondary: '#555555',
+        actionMain: '#1d4ed8',
+        actionSecondary: '#0384C7',
       },
       scale: {
         '-1': '-1',
