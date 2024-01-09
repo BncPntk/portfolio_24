@@ -5,12 +5,12 @@ module.exports = {
     extend: {
       colors: {
         background: '#F5F8F7',
-        fontMain: '#333333',
-        fontSecondary: '#555555',
-        titleTwo: '#404040',
-        titleOne: '#40C3CA',
+        blackMain: '#333333',
+        blackSecondary: '#555555',
+        blackTertiary: '#404040',
         actionMain: '#1d4ed8',
         actionSecondary: '#0384C7',
+        titleOne: '#40C3CA',
       },
       scale: {
         '-1': '-1',

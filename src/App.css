@@ -17,6 +17,6 @@ body {
 .target {
   font-kerning: none;
 }
-.icons:active {
+.scale-09:active {
   transform: scale(0.9) !important;
 }

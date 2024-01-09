@@ -38,17 +38,21 @@ export function Hero() {
           class={
             textAnimationFinished()
               ? 'text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-titleOne mb-4 max-w-3xl mx-auto transition-all duration-1000 drop-shadow-lg'
-              : 'text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-fontMain mb-4 max-w-3xl mx-auto'
+              : 'text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-blackMain mb-4 max-w-3xl mx-auto'
           }
         >
           BENCE PÉNTEK
         </h1>
-        <h2 id='desc' class='sm:text-lg lg:text-2xl font-bold text-fontSecondary mb-4 max-w-3xl mx-auto'>
+        <h2 id='desc' class='sm:text-lg lg:text-2xl font-bold text-blackSecondary mb-4 max-w-3xl mx-auto'>
           Full Stack Developer | Aspiring UI/UX Designer
         </h2>
         <div class='flex justify-end max-w-3xl mx-auto px-4 sm:px-12 md:px-28 lg:px-9 gap-3'>
-          <FaBrandsSquareGithub class='icons github-icon text-[36px] text-fontSecondary hover:cursor-pointer hover:text-titleTwo hover:duration-300' />
-          <IoLogoLinkedin class='icons linkedin-icon text-[36px] text-fontSecondary hover:cursor-pointer hover:text-titleTwo hover:duration-300' />
+          <a href='https://github.com/BncPntk'>
+            <FaBrandsSquareGithub class='scale-09 github-icon text-[36px] text-blackSecondary hover:cursor-pointer hover:text-blackTertiary hover:duration-300' />
+          </a>
+          <a href='https://www.linkedin.com/in/bncpntk/'>
+            <IoLogoLinkedin class='scale-09 linkedin-icon text-[36px] text-blackSecondary hover:cursor-pointer hover:text-blackTertiary hover:duration-300' />
+          </a>
         </div>
       </div>
     </section>

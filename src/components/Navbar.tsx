@@ -46,7 +46,7 @@ export function Navbar() {
             {(item) => (
               <li class='py-4 px-2'>
                 <a
-                  class='hover:cursor-pointer relative group text-fontMain hover:text-zinc-600 duration-300'
+                  class='hover:cursor-pointer relative group text-blackMain hover:text-blackSecondary duration-300'
                   href='#'
                 >
                   {item}
@@ -64,7 +64,7 @@ export function Navbar() {
               <For each={navItems}>
                 {(item) => (
                   <li class='py-6 px-4'>
-                    <a href='#' class='text-fontMain hover:text-zinc-600 duration-300'>
+                    <a href='#' class='text-blackMain hover:text-blackSecondary duration-300'>
                       {item}
                     </a>
                   </li>
