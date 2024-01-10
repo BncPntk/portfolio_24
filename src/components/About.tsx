@@ -1,5 +1,5 @@
 import { For, createEffect } from 'solid-js';
-import { Heading } from './Heading';
+// import { Heading } from './Heading';
 import { animate, scroll } from 'motion';
 
 export function About() {
