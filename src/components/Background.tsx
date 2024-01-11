@@ -2,6 +2,7 @@ import { JSX } from 'solid-js/jsx-runtime';
 import { Blob } from './Blob';
 
 interface BackgroundProps {
+  class?: string;
   children: JSX.Element;
   blobPosition?: 'left' | 'right';
   showBlob: boolean;
@@ -9,7 +10,7 @@ interface BackgroundProps {
 
 export function Background(props: BackgroundProps) {
   return (
-    <div class='relative w-full min-h-screen flex overflow-hidden h-full'>
+    <div class={`relative w-screen min-h-screen flex overflow-hidden h-full`}>
       <img class='absolute w-full h-full opacity-[.07] z-20' src='/noise_bg.jpg' />
 
       <div class='absolute w-full h-full bg-opacity-40 filter blur-xl z-10 '>

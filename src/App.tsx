@@ -4,6 +4,7 @@ import { Background } from './components/Background';
 import { Divider } from './components/Divider';
 import { Hero } from './components/Hero';
 import { Navbar } from './components/Navbar';
+import { ProjectList } from './components/ProjectList';
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
         <About />
       </Background>
       <Background blobPosition='left' showBlob={true}>
-        <Hero />
+        <ProjectList />
+      </Background>
+      <Background blobPosition='left' showBlob={false}>
+        <About />
       </Background>
     </div>
   );
