@@ -12,11 +12,11 @@ export const projectData: Project[] = [
   {
     id: 1,
     title: 'ShoeBox',
-    desc: '',
+    desc: 'A fictional online shoe store with multiple filtering options, offering a straightforward and efficient way to browse through our diverse collection.',
     path: '/shoebox.png',
-    stack: ['React', 'Tailwind CSS'],
-    code: '',
-    demo: '',
+    stack: ['React', 'React Router', 'Tailwind CSS'],
+    code: 'https://github.com/BncPntk/ShoeBox',
+    demo: 'https://bncpntk-shoebox.netlify.app/',
   },
   {
     id: 2,

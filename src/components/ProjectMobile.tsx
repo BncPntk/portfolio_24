@@ -10,36 +10,31 @@ type ProjectProps = {
     code: string;
     demo: string;
   };
-  numbers: number[];
-  class: string;
 };
 
-export function Project(props: ProjectProps) {
-  const orderFirst = `order-${props.numbers[0]}`;
-  const orderSecond = `order-${props.numbers[1]}`;
-
+export function ProjectMobile(props: ProjectProps) {
   return (
-    <div class={`${props.class}`}>
-      <div class='flex max-w-[1152px] w-full max-h-fit mx-auto py-28'>
+    <div>
+      <div class='flex max-w-[1152px] w-full max-h-fit mx-auto py-20 md:py-24'>
         <section class={`max-w-[1152px] px-4 justify-center flex flex-col mx-auto`}>
-          <div class={`grid lg:grid-cols-2 gap-10 xl:gap-20 items-center text-lg px-4`}>
-            <div class={`${orderFirst}`}>
-              <h4 class=' mb-4 font-bold lg:text-3xl xl:text-4xl'>{props.project.title}</h4>
-              <p class='mb-10 text-xl'>{props.project.desc}</p>
-              <ul class='flex flex-wrap gap-6 mb-14'>
+          <div class={`grid lg:grid-cols-2 gap-8 xl:gap-20 items-center text-lg px-8`}>
+            <div class={`order-2`}>
+              <h4 class='mb-2 font-bold text-2xl sm:text-4xl text-center'>{props.project.title}</h4>
+              <p class='mb-10 sm:text-xl text-center mx-2'>{props.project.desc}</p>
+              <ul class='flex flex-wrap gap-4 mb-8 justify-evenly md:mb-12 md:gap-8 md:justify-center'>
                 <For each={props.project.stack}>
                   {(stack) => (
-                    <li class='min-w-24 outline outline-offset-2 outline-1 outline-titleOne text-blackMain rounded-full text-center px-6'>
+                    <li class='min-w-24 outline outline-offset-2 outline-1 outline-titleOne text-blackMain rounded-full text-center px-4'>
                       {stack}
                     </li>
                   )}
                 </For>
               </ul>
-              <div class='flex gap-6 text-background justify-end'>
+              <div class='flex gap-6 sm:gap-12 text-background justify-center'>
                 <a
                   href={props.project.code}
                   target='_blank'
-                  class='py-1.5 px-4  text-[14px] bg-blackSecondary hover:bg-blackTertiary hover:duration-300 rounded-lg flex items-center gap-3'
+                  class='py-1.5 px-4 text-[14px] bg-blackSecondary hover:bg-blackTertiary hover:duration-300 rounded-lg flex items-center gap-3'
                 >
                   <span>Code</span>
                   <FaSolidCode class='text-2xl' />
@@ -55,7 +50,7 @@ export function Project(props: ProjectProps) {
               </div>
             </div>
             <div
-              class={`w-[550px] lg:w-[450px] xl:w-[500px] mx-auto outline outline-offset-8 outline-1 outline-titleOne rounded-lg ${orderSecond}`}
+              class={`max-w-[550px] mx-auto outline outline-offset-8 outline-1 outline-titleOne rounded-lg order-1`}
             >
               <img
                 class='projectTitle object-fill opacity-1 rounded-lg outline outline-offset-1 outline-1 outline-blackMain'
