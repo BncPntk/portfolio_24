@@ -34,7 +34,7 @@ export function ProjectMobile(props: ProjectProps) {
                 <a
                   href={props.project.code}
                   target='_blank'
-                  class='py-1.5 px-4 text-[14px] bg-blackSecondary hover:bg-blackTertiary hover:duration-300 rounded-lg flex items-center gap-3'
+                  class='py-1.5 px-4 text-[14px] bg-blackSecondary hover:bg-blackTertiary hover:duration-300 rounded-lg flex items-center gap-3 scale-09'
                 >
                   <span>Code</span>
                   <FaSolidCode class='text-2xl' />
@@ -42,7 +42,7 @@ export function ProjectMobile(props: ProjectProps) {
                 <a
                   href={props.project.demo}
                   target='_blank'
-                  class='py-1.5 px-4 text-[14px] bg-blackSecondary hover:bg-blackTertiary hover:duration-300 rounded-lg flex items-center gap-3'
+                  class='py-1.5 px-4 text-[14px] bg-blackSecondary hover:bg-blackTertiary hover:duration-300 rounded-lg flex items-center gap-3 scale-09'
                 >
                   <span>Live Demo</span>
                   <FaSolidEarthEurope class='text-2xl' />
