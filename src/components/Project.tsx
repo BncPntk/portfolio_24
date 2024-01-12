@@ -10,20 +10,20 @@ type ProjectProps = {
     code: string;
     demo: string;
   };
-  numbers: number[];
   class: string;
+  order: number[];
 };
 
 export function Project(props: ProjectProps) {
-  const orderFirst = `order-${props.numbers[0]}`;
-  const orderSecond = `order-${props.numbers[1]}`;
+  const orderOne = `order-${props.order[0]}`;
+  const orderTwo = `order-${props.order[1]}`;
 
   return (
     <div class={`${props.class}`}>
       <div class='flex max-w-[1152px] w-full max-h-fit mx-auto py-28'>
         <section class={`max-w-[1152px] px-4 justify-center flex flex-col mx-auto`}>
           <div class={`grid lg:grid-cols-2 gap-10 xl:gap-20 items-center text-lg px-4`}>
-            <div class={`${orderFirst}`}>
+            <div class={orderOne}>
               <h4 class=' mb-4 font-bold lg:text-3xl xl:text-4xl'>{props.project.title}</h4>
               <p class='mb-10 text-xl'>{props.project.desc}</p>
               <ul class='flex flex-wrap gap-6 mb-14'>
@@ -55,7 +55,7 @@ export function Project(props: ProjectProps) {
               </div>
             </div>
             <div
-              class={`w-[550px] lg:w-[450px] xl:w-[500px] mx-auto outline outline-offset-8 outline-1 outline-titleOne rounded-lg ${orderSecond}`}
+              class={`${orderTwo} w-[550px] lg:w-[450px] xl:w-[500px] mx-auto outline outline-offset-8 outline-1 outline-titleOne rounded-lg`}
             >
               <img
                 class='projectTitle object-fill opacity-1 rounded-lg outline outline-offset-1 outline-1 outline-blackMain'

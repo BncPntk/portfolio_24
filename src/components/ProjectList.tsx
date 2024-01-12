@@ -5,12 +5,12 @@ import { animate, scroll } from 'motion';
 import { ProjectMobile } from './ProjectMobile';
 
 export function ProjectList() {
-  const orderValues: number[] = [1, 2, 4, 3, 5, 6, 8, 7]; // Change for different order
   const [isMobile, setIsMobile] = createSignal(window.innerWidth < 1024);
+  let renderCounter = 0;
 
   createEffect(() => {
     document.querySelectorAll('.project-item').forEach((item) => {
-      scroll(animate(item, { scale: [1, 1, 1] }, { easing: ['ease-in', 'ease-out'] }), {
+      scroll(animate(item, { scale: [0.9, 1, 0.9] }, { easing: ['ease-in', 'ease-out'] }), {
         target: item,
         offset: ['start end', 'end end', 'start start', 'end start'],
       });
@@ -34,10 +34,11 @@ export function ProjectList() {
           <For each={projectData}>{(project) => <ProjectMobile project={project} />}</For>
         ) : (
           <For each={projectData}>
-            {(project, index) => {
-              const castedIndex: number = index() as number;
-              const numberPair: number[] = [orderValues[castedIndex * 2], orderValues[castedIndex * 2 + 1]];
-              return <Project project={project} numbers={numberPair} class='project-item' />;
+            {(project) => {
+              const orderValuesArray = renderCounter % 2 === 0 ? [1, 2] : [2, 1]; //order-xy
+
+              renderCounter++;
+              return <Project project={project} order={orderValuesArray} class='project-item' />;
             }}
           </For>
         )}

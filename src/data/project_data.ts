@@ -12,7 +12,7 @@ export const projectData: Project[] = [
   {
     id: 1,
     title: 'ShoeBox',
-    desc: 'A fictional online shoe store with multiple filtering options, offering a straightforward and efficient way to browse through our diverse collection.',
+    desc: 'A fictional online shoe store with multiple filtering options, offering a straightforward and efficient way to discover and buy shoes.',
     path: '/shoebox.png',
     stack: ['React', 'React Router', 'Tailwind CSS'],
     code: 'https://github.com/BncPntk/ShoeBox',
