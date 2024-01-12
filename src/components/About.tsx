@@ -1,5 +1,5 @@
 import { For, createEffect } from 'solid-js';
-// import { Heading } from './Heading';
+import { Heading } from './Heading';
 import { animate, scroll } from 'motion';
 
 export function About() {
@@ -28,7 +28,7 @@ export function About() {
   const tools = ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Adobe After Effects'];
   return (
     <section class='max-w-[1152px] w-full px-2 justify-center flex flex-col mx-auto h-fit my-20'>
-      {/* <Heading title={'About me'} /> */}
+      <Heading title={'AboutMe'} />
 
       <div
         id='about-me'

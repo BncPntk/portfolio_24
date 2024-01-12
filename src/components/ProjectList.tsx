@@ -3,6 +3,7 @@ import { projectData } from '../data/project_data';
 import { Project } from './Project';
 import { animate, scroll } from 'motion';
 import { ProjectMobile } from './ProjectMobile';
+import { Heading } from './Heading';
 
 export function ProjectList() {
   const [isMobile, setIsMobile] = createSignal(window.innerWidth < 1024);
@@ -30,6 +31,7 @@ export function ProjectList() {
   return (
     <section>
       <div id='projectsGrid' class='grid my-20'>
+        <Heading title={'MyWorks'} />
         {isMobile() ? (
           <For each={projectData}>{(project) => <ProjectMobile project={project} />}</For>
         ) : (
