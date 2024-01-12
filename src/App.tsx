@@ -2,6 +2,7 @@ import './App.css';
 import { About } from './components/About';
 import { Background } from './components/Background';
 import { Divider } from './components/Divider';
+import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
 import { Navbar } from './components/Navbar';
 import { ProjectList } from './components/ProjectList';
@@ -22,6 +23,7 @@ function App() {
       </Background>
       <Background blobPosition='left' showBlob={false}>
         <About />
+        <Footer />
       </Background>
     </div>
   );
