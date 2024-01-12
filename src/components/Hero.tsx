@@ -31,7 +31,7 @@ export function Hero() {
   });
 
   return (
-    <section class='max-w-[1152px] w-full px-4 justify-center flex flex-col mx-auto h-screen'>
+    <section class='max-w-[1152px] w-full px-4 justify-center flex flex-col mx-auto h-screen my-20'>
       <div class='text-center'>
         <h1
           id='heading'
@@ -47,10 +47,10 @@ export function Hero() {
           Full Stack Developer | Aspiring UI/UX Designer
         </h2>
         <div class='flex justify-end max-w-3xl mx-auto px-4 sm:px-12 md:px-28 lg:px-9 gap-3'>
-          <a href='https://github.com/BncPntk'>
+          <a href='https://github.com/BncPntk' target='_blank'>
             <FaBrandsSquareGithub class='scale-09 github-icon text-[36px] text-blackSecondary hover:cursor-pointer hover:text-blackTertiary hover:duration-300' />
           </a>
-          <a href='https://www.linkedin.com/in/bncpntk/'>
+          <a href='https://www.linkedin.com/in/bncpntk/' target='_blank'>
             <IoLogoLinkedin class='scale-09 linkedin-icon text-[36px] text-blackSecondary hover:cursor-pointer hover:text-blackTertiary hover:duration-300' />
           </a>
         </div>

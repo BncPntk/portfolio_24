@@ -3,7 +3,7 @@ import { createEffect } from 'solid-js';
 
 export function Divider() {
   createEffect(() => {
-    animate('#divider', { opacity: [0, 0.8], y: [20, 0] }, { duration: 0.3, delay: 2 });
+    animate('#divider', { opacity: [0, 0.7], y: [20, -150] }, { duration: 0.3, delay: 2 });
   });
 
   return (
