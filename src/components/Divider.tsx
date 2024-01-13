@@ -8,7 +8,7 @@ export function Divider() {
 
   return (
     <div class='items-center max-w-[1152px] w-full px-4 justify-center flex flex-col mx-auto relative'>
-      <div id='divider' class='bg-blackSecondary h-20 w-0.5 rounded block absolute'></div>
+      <div id='divider' class='bg-blackSecondary h-0 w-0.5 rounded block absolute'></div>
     </div>
   );
 }

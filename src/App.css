@@ -2,12 +2,13 @@
   margin: 0 auto;
   padding: 0;
   font-family: 'Lato', sans-serif;
+  color: #5e6472;
 }
 
 html,
 body {
   scrollbar-width: thin;
-  scrollbar-color: #404040 transparent;
+  scrollbar-color: #525660 transparent;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #404040;
+  background-color: #525660;
   border-radius: 8px;
 }
 

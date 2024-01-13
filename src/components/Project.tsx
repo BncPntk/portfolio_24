@@ -24,12 +24,12 @@ export function Project(props: ProjectProps) {
         <section class={`max-w-[1152px] px-4 justify-center flex flex-col mx-auto`}>
           <div class={`grid lg:grid-cols-2 gap-10 xl:gap-20 items-center text-lg px-4`}>
             <div class={orderOne}>
-              <h4 class=' mb-4 font-bold lg:text-3xl xl:text-4xl'>{props.project.title}</h4>
-              <p class='mb-10 text-xl'>{props.project.desc}</p>
+              <h4 class=' mb-4 font-bold lg:text-3xl xl:text-4xl text-title'>{props.project.title}</h4>
+              <p class='mb-10 text-xl text-text'>{props.project.desc}</p>
               <ul class='flex flex-wrap gap-6 mb-14'>
                 <For each={props.project.stack}>
                   {(stack) => (
-                    <li class='min-w-24 outline outline-offset-2 outline-1 outline-titleOne text-blackMain rounded-full text-center px-6'>
+                    <li class='min-w-24 outline outline-offset-2 outline-1 outline-blueMedium text-title rounded-full text-center px-6'>
                       {stack}
                     </li>
                   )}
@@ -39,7 +39,7 @@ export function Project(props: ProjectProps) {
                 <a
                   href={props.project.code}
                   target='_blank'
-                  class='py-1.5 px-4  text-[14px] bg-blackSecondary hover:bg-blackTertiary hover:duration-300 rounded-lg flex items-center gap-3 scale-09'
+                  class='py-1.5 px-4  text-[14px] bg-action hover:bg-actionHover transition duration-300 hover:duration-300 rounded-lg flex items-center gap-3 scale-09'
                 >
                   <span>Code</span>
                   <FaSolidCode class='text-2xl' />
@@ -47,18 +47,18 @@ export function Project(props: ProjectProps) {
                 <a
                   href={props.project.demo}
                   target='_blank'
-                  class='py-1.5 px-4 text-[14px] bg-blackSecondary hover:bg-blackTertiary hover:duration-300 rounded-lg flex items-center gap-3 scale-09'
+                  class='py-1.5 px-4 text-[14px] bg-action hover:bg-actionHover transition duration-300 hover:duration-300 rounded-lg flex items-center gap-3 scale-09'
                 >
-                  <span>Live Demo</span>
+                  <span>Demo</span>
                   <FaSolidEarthEurope class='text-2xl' />
                 </a>
               </div>
             </div>
             <div
-              class={`${orderTwo} w-[550px] lg:w-[450px] xl:w-[500px] mx-auto outline outline-offset-8 outline-1 outline-titleOne rounded-lg`}
+              class={`${orderTwo} w-[550px] lg:w-[450px] xl:w-[500px] mx-auto outline outline-offset-8 outline-1 outline-blueLight rounded-lg`}
             >
               <img
-                class='projectTitle object-fill opacity-1 rounded-lg outline outline-offset-1 outline-1 outline-blackMain'
+                class='projectTitle object-fill opacity-1 rounded-lg outline outline-offset-1 outline-1 outline-textImportant'
                 src={`${props.project.path}`}
                 alt=''
               />

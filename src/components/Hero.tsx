@@ -31,27 +31,27 @@ export function Hero() {
   });
 
   return (
-    <section class='max-w-[1152px] w-full px-4 justify-center flex flex-col mx-auto h-screen my-20'>
-      <div class='text-center'>
+    <section class='max-w-[1152px] w-full px-4 justify-center flex flex-col mx-auto h-screen pt-40'>
+      <div class='text-center mb-40'>
         <h1
           id='heading'
           class={
             textAnimationFinished()
-              ? 'text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-titleOne mb-4 max-w-3xl mx-auto transition-all duration-1000 drop-shadow-lg'
+              ? 'text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-titleName mb-4 max-w-3xl mx-auto transition-all duration-1000 drop-shadow-lg'
               : 'text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-blackMain mb-4 max-w-3xl mx-auto'
           }
         >
           BENCE PÉNTEK
         </h1>
-        <h2 id='desc' class='sm:text-lg lg:text-2xl font-bold text-blackSecondary mb-4 max-w-3xl mx-auto'>
+        <h2 id='desc' class='sm:text-lg lg:text-2xl font-bold text-text mb-4 max-w-3xl mx-auto'>
           Full Stack Developer | Aspiring UI/UX Designer
         </h2>
         <div class='flex justify-end max-w-3xl mx-auto px-4 sm:px-12 md:px-28 lg:px-9 gap-3'>
           <a href='https://github.com/BncPntk' target='_blank'>
-            <FaBrandsSquareGithub class='scale-09 github-icon text-[36px] text-blackSecondary hover:cursor-pointer hover:text-blackTertiary hover:duration-300' />
+            <FaBrandsSquareGithub class='scale-09 github-icon text-[42px] text-action transition duration-300 hover:cursor-pointer hover:text-actionHover hover:duration-300' />
           </a>
           <a href='https://www.linkedin.com/in/bncpntk/' target='_blank'>
-            <IoLogoLinkedin class='scale-09 linkedin-icon text-[36px] text-blackSecondary hover:cursor-pointer hover:text-blackTertiary hover:duration-300' />
+            <IoLogoLinkedin class='scale-09 linkedin-icon text-[42px] text-action hover:cursor-pointer transition duration-300 hover:text-actionHover hover:duration-300' />
           </a>
         </div>
       </div>

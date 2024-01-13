@@ -37,20 +37,20 @@ export function Navbar() {
       >
         <a
           href='https://bencepentek.com/'
-          class='text-2xl lg:text-[22px] font-extrabold p-1.5 text-actionSecondary drop-shadow-sm tracking-wide'
+          class='text-2xl lg:text-[22px] font-extrabold p-1.5 text-action drop-shadow-sm tracking-wide'
         >
-          bencepentek.com
+          bencepentek
         </a>
         <ul class='md:flex gap-8 text-[18px] font-semibold tracking-wide hidden'>
           <For each={navItems}>
             {(item) => (
-              <li class='py-4 px-2'>
+              <li class='py-4 px-2 text-action hover:text-trivial'>
                 <a
                   class='hover:cursor-pointer relative group text-blackMain hover:text-blackSecondary duration-300'
                   href='#'
                 >
                   {item}
-                  <div class='absolute w-full h-0.5 rounded bg-actionSecondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300' />
+                  <div class='absolute w-full h-0.5 rounded bg-highlight scale-x-0 group-hover:scale-x-100 transition-transform duration-300' />
                 </a>
               </li>
             )}
@@ -64,7 +64,7 @@ export function Navbar() {
               <For each={navItems}>
                 {(item) => (
                   <li class='py-6 px-4'>
-                    <a href='#' class='text-blackMain hover:text-blackSecondary duration-300'>
+                    <a href='#' class='text-action hover:text-trivial duration-300'>
                       {item}
                     </a>
                   </li>

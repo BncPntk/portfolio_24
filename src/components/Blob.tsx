@@ -19,7 +19,7 @@ export function Blob(props: BlobProps) {
           <defs>
             <linearGradient id='gradient' x1='40%' y1='20%' x2='100%' y2='100%'>
               <stop offset='0%' style='stop-color:#2EE3DA' />
-              <stop offset='100%' style='stop-color:#1D5490' />
+              <stop offset='100%' style='stop-color:#1976D2' />
             </linearGradient>
           </defs>
           <path fill='url(#gradient)' transform='translate(100 100)'>
