@@ -21,6 +21,9 @@ module.exports = {
         action: '#2B2D42',
         actionHover: '#1E88E5',
       },
+      boxShadow: {
+        big: '0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.15)',
+      },
       scale: {
         '-1': '-1',
       },

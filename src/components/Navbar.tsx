@@ -1,6 +1,6 @@
-import { For, Show, createSignal, onCleanup } from 'solid-js';
-import { Hamburger } from './Hamburger';
+import { For, createSignal, onCleanup } from 'solid-js';
 import { SmoothScroll } from '../utils/smoothScroll';
+import { NavMobile } from './NavMobile';
 
 const navItems = ['About', 'Projects', 'Resume'];
 
@@ -19,20 +19,19 @@ export function Navbar() {
     }
   }
 
-  const smoothScroll = SmoothScroll();
-
-  const handleNavClick = (id: string, e: Event) => {
-    e.preventDefault();
-    console.log('Clicked on:', id);
-    smoothScroll.scrollTo(id);
-    setToggleMobileNav(false);
-  };
-
   onCleanup(() => {
     window.removeEventListener('resize', handleResize);
     setToggleMobileNav(false);
   });
   window.addEventListener('resize', handleResize);
+
+  const smoothScroll = SmoothScroll();
+
+  const handleNavClick = (id: string, e: Event) => {
+    e.preventDefault();
+    smoothScroll.scrollTo(id);
+    setToggleMobileNav(false);
+  };
 
   return (
     <nav
@@ -66,7 +65,9 @@ export function Navbar() {
                       : 'hover:text-blackSecondary'
                   } hover:cursor-pointer relative group text-blackMain transition duration-300 `}
                   href={item.toLowerCase()}
-                  onClick={(e) => handleNavClick(item.toLowerCase(), e)}
+                  onClick={(e) => {
+                    handleNavClick(item.toLowerCase(), e);
+                  }}
                 >
                   {item}
                   <div
@@ -81,31 +82,12 @@ export function Navbar() {
             )}
           </For>
         </ul>
-        {/* mobile */}
-        <Hamburger isOpen={toggleMobileNav()} onClick={handleMobileNav} />
-        <Show when={toggleMobileNav()} fallback={null}>
-          <div class='fixed left-0 top-16 w-screen h-screen bg-background'>
-            <ul class='pt-16 px-8 text-2xl font-bold text-center mx-auto'>
-              <For each={navItems}>
-                {(item, i) => (
-                  <li class='py-6 px-4'>
-                    <a
-                      href={item.toLowerCase()}
-                      onClick={(e) => handleNavClick(item.toLowerCase(), e)}
-                      class={`${
-                        i() === navItems.length - 1
-                          ? 'text-blueLight bg-action px-20 py-2 rounded'
-                          : 'text-action hover:text-trivial'
-                      }  duration-300`}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )}
-              </For>
-            </ul>
-          </div>
-        </Show>
+        <NavMobile
+          navItems={navItems}
+          toggleMobileNav={toggleMobileNav}
+          onMobileNav={handleMobileNav}
+          onNavClick={handleNavClick}
+        />
       </div>
     </nav>
   );
