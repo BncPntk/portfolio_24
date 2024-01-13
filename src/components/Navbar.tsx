@@ -29,8 +29,12 @@ export function Navbar() {
 
   const handleNavClick = (id: string, e: Event) => {
     e.preventDefault();
-    smoothScroll.scrollTo(id);
-    setToggleMobileNav(false);
+    if (id === `resume`) {
+      window.open('/cv_2024.pdf', '_blank');
+    } else {
+      smoothScroll.scrollTo(id);
+      setToggleMobileNav(false);
+    }
   };
 
   return (
