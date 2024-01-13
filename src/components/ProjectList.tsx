@@ -30,7 +30,7 @@ export function ProjectList() {
 
   return (
     <section>
-      <div id='projectsGrid' class='grid my-20'>
+      <div id='projects' class='grid my-20'>
         <Heading title={'MyWorks'} />
         {isMobile() ? (
           <For each={projectData}>{(project) => <ProjectMobile project={project} />}</For>

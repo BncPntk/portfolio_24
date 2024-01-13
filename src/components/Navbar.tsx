@@ -1,7 +1,8 @@
 import { For, Show, createSignal, onCleanup } from 'solid-js';
 import { Hamburger } from './Hamburger';
+import { SmoothScroll } from '../utils/smoothScroll';
 
-const navItems = ['About Me', 'Projects', 'Resume'];
+const navItems = ['About', 'Projects', 'Resume'];
 
 export function Navbar() {
   const [toggleMobileNav, setToggleMobileNav] = createSignal(false);
@@ -17,6 +18,15 @@ export function Navbar() {
       setToggleMobileNav(false);
     }
   }
+
+  const smoothScroll = SmoothScroll();
+
+  const handleNavClick = (id: string, e: Event) => {
+    e.preventDefault();
+    console.log('Clicked on:', id);
+    smoothScroll.scrollTo(id);
+    setToggleMobileNav(false);
+  };
 
   onCleanup(() => {
     window.removeEventListener('resize', handleResize);
@@ -43,14 +53,29 @@ export function Navbar() {
         </a>
         <ul class='md:flex gap-8 text-[18px] font-semibold tracking-wide hidden'>
           <For each={navItems}>
-            {(item) => (
-              <li class='py-4 px-2 text-action hover:text-trivial'>
+            {(item, i) => (
+              <li
+                class={`${
+                  i() === navItems.length - 1 ? ' scale-09' : ''
+                } py-4 px-2 text-action hover:text-trivial `}
+              >
                 <a
-                  class='hover:cursor-pointer relative group text-blackMain hover:text-blackSecondary duration-300'
-                  href='#'
+                  class={`${
+                    i() === navItems.length - 1
+                      ? 'bg-action rounded text-blueLight px-4 py-2 transition hover:text-action  hover:bg-blueLight duration-300 hover:cursor-pointer hover:duration-300'
+                      : 'hover:text-blackSecondary'
+                  } hover:cursor-pointer relative group text-blackMain transition duration-300 `}
+                  href={item.toLowerCase()}
+                  onClick={(e) => handleNavClick(item.toLowerCase(), e)}
                 >
                   {item}
-                  <div class='absolute w-full h-0.5 rounded bg-highlight scale-x-0 group-hover:scale-x-100 transition-transform duration-300' />
+                  <div
+                    class={`${
+                      i() === navItems.length - 1
+                        ? ''
+                        : 'h-0.5 rounded bg-highlight scale-x-0 group-hover:scale-x-100 transition-transform duration-300'
+                    }absolute w-full`}
+                  />
                 </a>
               </li>
             )}
@@ -62,9 +87,17 @@ export function Navbar() {
           <div class='fixed left-0 top-16 w-screen h-screen bg-background'>
             <ul class='pt-16 px-8 text-2xl font-bold text-center mx-auto'>
               <For each={navItems}>
-                {(item) => (
+                {(item, i) => (
                   <li class='py-6 px-4'>
-                    <a href='#' class='text-action hover:text-trivial duration-300'>
+                    <a
+                      href={item.toLowerCase()}
+                      onClick={(e) => handleNavClick(item.toLowerCase(), e)}
+                      class={`${
+                        i() === navItems.length - 1
+                          ? 'text-blueLight bg-action px-20 py-2 rounded'
+                          : 'text-action hover:text-trivial'
+                      }  duration-300`}
+                    >
                       {item}
                     </a>
                   </li>

@@ -13,9 +13,10 @@ export function About() {
     'SolidJS',
     'React',
   ];
+  const tools = ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Adobe After Effects'];
 
   createEffect(() => {
-    const item = document.querySelector('#about-me');
+    const item = document.querySelector('#about');
 
     if (item && window.innerWidth >= 768) {
       scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
@@ -25,15 +26,11 @@ export function About() {
     }
   });
 
-  const tools = ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Adobe After Effects'];
   return (
-    <section class='max-w-[1152px] w-full px-2 justify-center flex flex-col mx-auto h-fit my-20'>
+    <section id='about' class='max-w-[1152px] w-full px-2 justify-center flex flex-col mx-auto h-fit my-20'>
       <Heading title={'AboutMe'} />
 
-      <div
-        id='about-me'
-        class='grid md:grid-cols-2 items-center text-2xl text-textImportant justify-around gap-10 md:gap-16 lg:gap-28 px-6 md:px-0'
-      >
+      <div class='grid md:grid-cols-2 items-center text-2xl text-textImportant justify-around gap-10 md:gap-16 lg:gap-28 px-6 md:px-0'>
         {/* left part */}
         <div class='text-start md:text-end font-bold md:pl-8 order-2 md:order-1'>
           <div class='pb-8 md:pb-12'>

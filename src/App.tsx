@@ -18,9 +18,6 @@ function App() {
       </Background>
       <Background blobPosition='left' showBlob={true}>
         <ProjectList />
-      </Background>
-      <Background blobPosition='left' showBlob={false}>
-        <About />
         <Footer />
       </Background>
     </div>
