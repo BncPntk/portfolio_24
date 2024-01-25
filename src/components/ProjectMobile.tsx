@@ -5,6 +5,7 @@ type ProjectProps = {
   project: {
     title: string;
     desc: string;
+    warning?: string;
     path: string;
     stack: string[];
     code: string;
@@ -22,7 +23,14 @@ export function ProjectMobile(props: ProjectProps) {
               <h4 class='mb-2 font-bold text-2xl sm:text-4xl text-center text-title'>
                 {props.project.title}
               </h4>
-              <p class='mb-10 sm:text-xl text-center mx-2 text-text'>{props.project.desc}</p>
+              <p class={`sm:text-xl text-center mx-2 text-text ${props.project.warning ? 'mb-3' : 'mb-10'}`}>
+                {props.project.desc}
+              </p>
+              {props.project.warning && (
+                <p class='mb-10 text-[16px] text-text opacity-70 leading-5 text-center mx-2'>
+                  {props.project.warning}
+                </p>
+              )}
               <ul class='flex flex-wrap gap-4 mb-8 justify-evenly md:mb-12 md:gap-8 md:justify-center'>
                 <For each={props.project.stack}>
                   {(stack) => (

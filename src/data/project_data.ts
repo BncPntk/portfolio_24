@@ -2,6 +2,7 @@ interface Project {
   id: number;
   title: string;
   desc: string;
+  warning?: string;
   path: string;
   stack: string[];
   code: string;
@@ -13,8 +14,10 @@ export const projectData: Project[] = [
     id: 1,
     title: 'ShoeBox',
     desc: 'A fictional online shoe store with multiple filtering options, offering a straightforward and efficient way to discover and buy shoes.',
+    warning:
+      'Expect the first load time to be around 1.4 mins as Render spins down its Free service after 15 mins without traffic.',
     path: '/shoebox.png',
-    stack: ['React', 'React Router', 'Tailwind CSS'],
+    stack: ['React', 'React Router', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
     code: 'https://github.com/BncPntk/ShoeBox',
     demo: 'https://bncpntk-shoebox.netlify.app/',
   },

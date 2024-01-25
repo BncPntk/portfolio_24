@@ -5,6 +5,7 @@ type ProjectProps = {
   project: {
     title: string;
     desc: string;
+    warning?: string;
     path: string;
     stack: string[];
     code: string;
@@ -24,8 +25,13 @@ export function Project(props: ProjectProps) {
         <section class={`max-w-[1152px] px-4 justify-center flex flex-col mx-auto`}>
           <div class={`grid lg:grid-cols-2 gap-10 xl:gap-20 items-center text-lg px-4`}>
             <div class={orderOne}>
-              <h4 class=' mb-4 font-bold lg:text-3xl xl:text-4xl text-title'>{props.project.title}</h4>
-              <p class='mb-10 text-xl text-text'>{props.project.desc}</p>
+              <h4 class='mb-4 font-bold lg:text-3xl xl:text-4xl text-title'>{props.project.title}</h4>
+              <p class={`text-xl text-text ${props.project.warning ? 'mb-2' : 'mb-10'}`}>
+                {props.project.desc}
+              </p>
+              {props.project.warning && (
+                <p class='mb-10 text-[16px] text-text opacity-70 leading-5'>{props.project.warning}</p>
+              )}
               <ul class='flex flex-wrap gap-6 mb-14'>
                 <For each={props.project.stack}>
                   {(stack) => (

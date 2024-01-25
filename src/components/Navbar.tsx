@@ -30,7 +30,7 @@ export function Navbar() {
   const handleNavClick = (id: string, e: Event) => {
     e.preventDefault();
     if (id === `resume`) {
-      window.open('/cv_2024.pdf', '_blank');
+      window.open('/bence_pentek_full_stack_developer.pdf', '_blank');
     } else {
       smoothScroll.scrollTo(id);
       setToggleMobileNav(false);
